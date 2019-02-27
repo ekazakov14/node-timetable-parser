@@ -1,10 +1,10 @@
 import rp from 'request-promise';
 const cabinet = 'https://cabinet.sut.ru/raspisanie_all_new.php';
 
-export const getGroupsList = info => {
+export default function getGroupsList(info) {
   const p = info.map(faculty => {
-    var promise = faculty.courseList.map(course => {
-      let options = {
+    const promise = faculty.courseList.map(course => {
+      const options = {
         method: 'POST',
         uri: cabinet,
         form: {
@@ -16,14 +16,14 @@ export const getGroupsList = info => {
       };
       return rp(options)
         .then(response => {
-          let groupsInfo = response
+          const groupsInfo = response
             .split(';')
             .filter(item => item !== '')
             .map(item => {
-              let split = item.split(',');
+              const split = item.split(',');
               return {
-                groupName: split[1],
-                groupCode: split[0]
+                name: split[1],
+                id: split[0]
               };
             });
           return {
@@ -39,4 +39,4 @@ export const getGroupsList = info => {
     }));
   });
   return Promise.all(p);
-};
+}

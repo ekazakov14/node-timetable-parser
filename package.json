@@ -4,16 +4,24 @@
   "description": "timetable sut.ru parser",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node --experimental-modules index.mjs",
+    "dev": "nodemon --experimental-modules index.mjs"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "cheerio": "^1.0.0-rc.2",
+    "eslint": "^5.14.1",
+    "eslint-config-node": "^4.0.0",
+    "eslint-plugin-node": "^8.0.1",
     "express": "^4.16.4",
+    "nodemon": "^1.18.10",
     "request": "^2.88.0",
     "request-promise": "^4.2.4",
     "yarn": "^1.13.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "mongodb": "^3.1.13"
+  }
 }

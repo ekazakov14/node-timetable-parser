@@ -1,6 +1,6 @@
 import cheerio from 'cheerio';
 
-export const getFacultyList = html => {
+export default function getFacultyList(html) {
   const $ = cheerio.load(html);
   // static course list for each faculty
   const courseList = $('#kurs > option + option');
@@ -22,4 +22,4 @@ export const getFacultyList = html => {
     ];
   });
   return facultyArray;
-};
+}
