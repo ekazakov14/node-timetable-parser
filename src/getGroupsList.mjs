@@ -11,7 +11,7 @@ export default function getGroupsList(info) {
           faculty: faculty.id,
           choice: '1',
           type_z: '1',
-          kurs: course
+          kurs: course.value
         }
       };
       return rp(options)

@@ -5,13 +5,14 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node --experimental-modules index.mjs",
-    "dev": "nodemon --experimental-modules index.mjs"
+    "start": "cross-env PORT=3000 node --experimental-modules index.mjs",
+    "dev": "cross-env PORT=3000 nodemon --experimental-modules index.mjs"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "cheerio": "^1.0.0-rc.2",
+    "cross-env": "^5.2.0",
     "eslint": "^5.14.1",
     "eslint-config-node": "^4.0.0",
     "eslint-plugin-node": "^8.0.1",
@@ -22,6 +23,6 @@
     "yarn": "^1.13.0"
   },
   "dependencies": {
-    "mongodb": "^3.1.13"
+    "mongoose": "^5.4.16"
   }
 }
