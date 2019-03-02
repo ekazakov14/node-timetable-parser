@@ -5,7 +5,7 @@ export function parseType(string) {
 
 export function parseWeeks(string) {
   const reg = string.match(/\d+/g);
-  return reg ? reg[0] : string;
+  return reg || string;
 }
 
 export function parseRoom(string) {

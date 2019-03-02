@@ -31,7 +31,9 @@ export default function getGroupsList(info) {
             groupsInfo
           };
         })
-        .catch(error => console.error(error));
+        .catch(e => {
+          throw new Error(e);
+        });
     });
     return Promise.all(promise).then(courseList => ({
       ...faculty,
