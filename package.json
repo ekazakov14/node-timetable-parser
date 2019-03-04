@@ -4,9 +4,9 @@
   "description": "timetable sut.ru parser",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "cross-env PORT=3000 node --experimental-modules index.mjs",
-    "dev": "cross-env PORT=3000 nodemon --experimental-modules index.mjs"
+    "dev": "cross-env PORT=3000 nodemon --experimental-modules index.mjs",
+    "db": "cross-env PORT=3000 nodemon --experimental-modules db.mjs"
   },
   "author": "",
   "license": "ISC",

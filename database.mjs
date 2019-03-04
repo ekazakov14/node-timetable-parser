@@ -9,8 +9,8 @@ export default () => (
     mongoose.connection
     .on('error', error => reject(error))
     .on('close', () => console.log('Database connection closed'))
-    .once('open', () => resolve(mongoose.connections[0]));
+    .once('open', () => resolve(mongoose.connection));
 
-    resolve(mongoose.connect(config.MONGO_URL));
+    mongoose.connect(config.MONGO_URL);
   })
 );

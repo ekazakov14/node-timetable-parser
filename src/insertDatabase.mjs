@@ -1,24 +1,11 @@
 import mongoose from 'mongoose';
 import database from '../database.mjs';
+import Pair from './models/Pair.mjs';
 
 export default function(groups) {
   database()
     .then(db => {
-
       let allPairs = [];
-
-      const pairSchema = mongoose.Schema({
-        _id: mongoose.Schema.Types.ObjectId,
-        faculty: String,
-        group: String,
-        name: String,
-        type: String,
-        weeks: Array,
-        teacher: String,
-        room: String
-      });
-
-      const Pair = mongoose.model('Group', pairSchema);
 
       groups.forEach(group => {
         group.pairs.forEach(pair => {
@@ -28,6 +15,8 @@ export default function(groups) {
             group: group.group,
             name: pair.name,
             type: pair.types,
+            day: pair.day,
+            time: pair.time,
             weeks: pair.weeks,
             teacher: pair.teacher,
             room: pair.room
@@ -38,7 +27,7 @@ export default function(groups) {
 
       Pair.create(allPairs)
         .then(() => {
-          db.disconnect();
+          db.close();
         })
         .catch(e => {
           throw new Error(e);

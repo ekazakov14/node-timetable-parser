@@ -18,6 +18,7 @@ export default function parseGroup(group) {
       let pairs = [];
       const $ = cheerio.load(response);
       $('.pair').each(function() {
+        const index = $(this).closest('td').index();
         const name = $(this)
           .find('.subect')
           .text();
@@ -26,6 +27,15 @@ export default function parseGroup(group) {
             .find('.type')
             .text()
         );
+        const day = $(this)
+          .closest('table')
+          .find('th')
+          .eq(index)
+          .text();
+        const time = $(this)
+          .closest('tr')
+          .children('td:first-of-type')
+          .text();
         const weeks = parseWeeks(
           $(this)
             .find('.weeks')
@@ -45,6 +55,8 @@ export default function parseGroup(group) {
           {
             name,
             type,
+            day,
+            time,
             weeks,
             teacher,
             room
