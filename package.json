@@ -18,11 +18,11 @@
     "eslint-plugin-node": "^8.0.1",
     "express": "^4.16.4",
     "nodemon": "^1.18.10",
-    "request": "^2.88.0",
-    "request-promise": "^4.2.4",
     "yarn": "^1.13.0"
   },
   "dependencies": {
-    "mongoose": "^5.4.16"
+    "mongoose": "^5.4.16",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.4"
   }
 }

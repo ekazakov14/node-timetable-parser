@@ -70,6 +70,7 @@ export default function parseGroup(group) {
       };
     })
     .catch(e => {
+      console.error(options);
       throw new Error(e);
     });
 }
