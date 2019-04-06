@@ -6,7 +6,7 @@
   "scripts": {
     "start": "cross-env PORT=3000 npx babel-node ./index.js",
     "dev": "cross-env PORT=3000 nodemon --exec babel-node ./index.js",
-    "db": "cross-env PORT=3000 nodemon --experimental-modules db.mjs"
+    "db": "cross-env PORT=3000 nodemon --exec babel-node db.js"
   },
   "author": "",
   "license": "ISC",
