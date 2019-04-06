@@ -1,6 +1,6 @@
 import rp from 'request-promise';
 import cheerio from 'cheerio';
-import { parseType, parseWeeks, parseRoom } from './regExpressions.mjs';
+import { parseType, parseWeeks, parseRoom } from './regExpressions.js';
 
 const url = 'https://cabinet.sut.ru/raspisanie_all_new?type_z=1';
 

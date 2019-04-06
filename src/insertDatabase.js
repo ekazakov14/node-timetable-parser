@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
-import database from '../database.mjs';
-import Pair from './models/Pair.mjs';
+import database from '../database.js';
+import Pair from './models/Pair.js';
 
 export default function(groups) {
   database()

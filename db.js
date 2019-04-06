@@ -1,6 +1,6 @@
-import database from './database.mjs';
+import database from './database.js';
 import express from 'express';
-import Pair from './src/models/Pair.mjs';
+import Pair from './src/models/Pair.js';
 
 const app = express();
 
