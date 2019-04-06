@@ -4,13 +4,17 @@
   "description": "timetable sut.ru parser",
   "main": "index.js",
   "scripts": {
-    "start": "cross-env PORT=3000 node --experimental-modules index.mjs",
-    "dev": "cross-env PORT=3000 nodemon --experimental-modules index.mjs",
+    "start": "cross-env PORT=3000 npx babel-node ./index.js",
+    "dev": "cross-env PORT=3000 nodemon --exec babel-node ./index.js",
     "db": "cross-env PORT=3000 nodemon --experimental-modules db.mjs"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@babel/cli": "^7.4.3",
+    "@babel/core": "^7.4.3",
+    "@babel/node": "^7.2.2",
+    "@babel/preset-env": "^7.4.3",
     "cheerio": "^1.0.0-rc.2",
     "cross-env": "^5.2.0",
     "eslint": "^5.14.1",
